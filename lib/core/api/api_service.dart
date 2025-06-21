@@ -18,6 +18,8 @@ abstract class ApiService {
 
   @GET(ApiConstants.topHeadlines)
   Future<TopHeadlinesResponse> getTopHeadlines(
-    @Body() TopHeadlinesBodyModel topHeadlinesBodyModel,
+    @Queries() Map<String, dynamic> query,
   );
 }
+
+    // @Query('topHeadlinesBodyModel') TopHeadlinesBodyModel topHeadlinesBodyModel,

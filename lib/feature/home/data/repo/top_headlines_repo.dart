@@ -11,7 +11,7 @@ class TopHeadlinesRepo {
   TopHeadlinesRepo(this.apiService);
 
   Future<Either<Failure, TopHeadlinesResponse>> getTopHeadlines(
-    TopHeadlinesBodyModel topHeadlinesBodyModel,
+    Map<String, dynamic> topHeadlinesBodyModel,
   ) async {
     try {
       final response = await apiService.getTopHeadlines(topHeadlinesBodyModel);

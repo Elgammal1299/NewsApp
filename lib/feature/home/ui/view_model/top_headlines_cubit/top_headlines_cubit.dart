@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/core/error/Failure.dart';
 import 'package:news_app/feature/home/data/model/top_headlines_body_model.dart';
 import 'package:news_app/feature/home/data/model/top_headlines_response.dart';
 import 'package:news_app/feature/home/data/repo/top_headlines_repo.dart';
@@ -11,8 +10,9 @@ class TopHeadlinesCubit extends Cubit<TopHeadlinesState> {
   final TopHeadlinesRepo topHeadlinesRepo;
   Future<void> getTopHeadlines() async {
     emit(TopHeadlinesLoading());
+    final model = TopHeadlinesBodyModel(category: 'health');
     final responce = await topHeadlinesRepo.getTopHeadlines(
-      TopHeadlinesBodyModel(category: 'health'),
+      model.toCleanQuery(),
     );
     responce.fold(
       (failure) {

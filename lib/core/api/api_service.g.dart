@@ -10,7 +10,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://newsapi.org/v2/';
+    baseUrl ??= 'https://newsapi.org/';
   }
 
   final Dio _dio;
@@ -21,18 +21,18 @@ class _ApiService implements ApiService {
 
   @override
   Future<TopHeadlinesResponse> getTopHeadlines(
-    TopHeadlinesBodyModel topHeadlinesBodyModel,
+    Map<String, dynamic> query,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query);
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(topHeadlinesBodyModel.toJson());
+    const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<TopHeadlinesResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'top-headlines',
+            'v2/top-headlines',
             queryParameters: queryParameters,
             data: _data,
           )
