@@ -27,9 +27,7 @@ class DioFactory {
     dio?.options.headers = {
       // 'Content-Type': 'application/json',
       // 'Accept': 'application/json',
-      'Authorization':
-          'Bearer ${ApiConstants.apiKey} ?? '
-          '}',
+      'Authorization': 'Bearer ${ApiConstants.apiKey}',
     };
   }
 

@@ -1,4 +1,4 @@
 class AppRoutes {
-  static const splasahRouter = '/';
-  static const homeRoute = '/home';
+  // static const splasahRouter = '/';
+  static const homeRoute = '/';
 }
