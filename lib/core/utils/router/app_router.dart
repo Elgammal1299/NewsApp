@@ -15,7 +15,7 @@ class AppRouter {
           builder:
               (_) => BlocProvider(
                 create:
-                    (context) => getIt<TopHeadlinesCubit>()..getTopHeadlines(),
+                    (context) => getIt<TopHeadlinesCubit>()..getTopHeadlines()..getRecommendedNews(),
                 child: HomeScreen(),
               ),
         );

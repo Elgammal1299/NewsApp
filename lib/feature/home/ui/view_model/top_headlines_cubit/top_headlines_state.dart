@@ -17,3 +17,17 @@ final class TopHeadlinesError extends TopHeadlinesState {
 
   TopHeadlinesError(this.errMessage);
 }
+
+final class RecommendedNewsLoading extends TopHeadlinesState {}
+
+final class RecommendedNewsSuccess extends TopHeadlinesState {
+  final List<ArticleModel> artical;
+
+  RecommendedNewsSuccess(this.artical);
+}
+
+final class RecommendedNewsError extends TopHeadlinesState {
+  final String errMessage;
+
+  RecommendedNewsError(this.errMessage);
+}

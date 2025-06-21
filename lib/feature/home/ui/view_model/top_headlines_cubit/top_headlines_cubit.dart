@@ -10,7 +10,11 @@ class TopHeadlinesCubit extends Cubit<TopHeadlinesState> {
   final TopHeadlinesRepo topHeadlinesRepo;
   Future<void> getTopHeadlines() async {
     emit(TopHeadlinesLoading());
-    final model = TopHeadlinesBodyModel(category: 'health');
+    final model = TopHeadlinesBodyModel(
+      category: 'health',
+      page: 1,
+      pageSize: 8,
+    );
     final responce = await topHeadlinesRepo.getTopHeadlines(
       model.toCleanQuery(),
     );
@@ -20,6 +24,22 @@ class TopHeadlinesCubit extends Cubit<TopHeadlinesState> {
       },
       (success) {
         emit(TopHeadlinesSuccess(success.articles));
+      },
+    );
+  }
+
+  Future<void> getRecommendedNews() async {
+    emit(RecommendedNewsLoading());
+    final model = TopHeadlinesBodyModel(page: 1, pageSize: 15);
+    final responce = await topHeadlinesRepo.getTopHeadlines(
+      model.toCleanQuery(),
+    );
+    responce.fold(
+      (failure) {
+        emit(RecommendedNewsError(failure.errMessage));
+      },
+      (success) {
+        emit(RecommendedNewsSuccess(success.articles));
       },
     );
   }
