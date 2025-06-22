@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:news_app/core/constant/api_constants.dart';
 import 'package:news_app/feature/home/data/model/top_headlines_body_model.dart';
-import 'package:news_app/feature/home/data/model/top_headlines_response.dart';
+import 'package:news_app/core/model/news_api_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_service.g.dart';
@@ -17,9 +17,11 @@ abstract class ApiService {
   }) = _ApiService;
 
   @GET(ApiConstants.topHeadlines)
-  Future<TopHeadlinesResponse> getTopHeadlines(
+  Future<NewsApiResponse> getTopHeadlines(
     @Queries() Map<String, dynamic> query,
   );
+  @GET(ApiConstants.everything)
+  Future<NewsApiResponse> getSearch(@Queries() Map<String, dynamic> query);
 }
 
     // @Query('topHeadlinesBodyModel') TopHeadlinesBodyModel topHeadlinesBodyModel,

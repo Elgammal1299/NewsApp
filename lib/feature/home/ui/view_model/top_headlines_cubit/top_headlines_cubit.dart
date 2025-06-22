@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/db/news_db.dart';
-import 'package:news_app/feature/home/data/model/news_local.dart';
+import 'package:news_app/core/model/news_local.dart';
 import 'package:news_app/feature/home/data/model/top_headlines_body_model.dart';
-import 'package:news_app/feature/home/data/model/top_headlines_response.dart';
+import 'package:news_app/core/model/news_api_response.dart';
 import 'package:news_app/feature/home/data/repo/top_headlines_repo.dart';
 
 part 'top_headlines_state.dart';

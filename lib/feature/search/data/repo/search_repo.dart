@@ -4,16 +4,16 @@ import 'package:news_app/core/api/api_service.dart';
 import 'package:news_app/core/error/Failure.dart';
 import 'package:news_app/core/model/news_api_response.dart';
 
-class TopHeadlinesRepo {
+class SearchRepo {
   final ApiService apiService;
 
-  TopHeadlinesRepo(this.apiService);
+  SearchRepo(this.apiService);
 
-  Future<Either<Failure, NewsApiResponse>> getTopHeadlines(
-    Map<String, dynamic> topHeadlinesBodyModel,
+  Future<Either<Failure, NewsApiResponse>> getSearch(
+    Map<String, dynamic> searchBodyModel,
   ) async {
     try {
-      final response = await apiService.getTopHeadlines(topHeadlinesBodyModel);
+      final response = await apiService.getSearch(searchBodyModel);
       return Right(response);
     } on DioException catch (dioError) {
       return left(ServerFailure.fromDioError(dioError));

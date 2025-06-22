@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/core/utils/app_colors.dart';
 import 'package:news_app/core/utils/router/app_routes.dart';
-import 'package:news_app/feature/home/data/model/top_headlines_response.dart';
+import 'package:news_app/core/model/news_api_response.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:intl/intl.dart';
 
