@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:news_app/feature/home/data/model/news_local.dart';
+import 'package:news_app/core/model/news_local.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 

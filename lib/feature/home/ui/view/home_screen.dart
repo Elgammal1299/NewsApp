@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/utils/app_colors.dart';
+import 'package:news_app/core/utils/router/app_routes.dart';
 import 'package:news_app/core/utils/widget/app_drawer.dart';
 import 'package:news_app/feature/home/ui/view/widget/custom_carouse_slider.dart';
 import 'package:news_app/feature/home/ui/view/widget/recommendation_list_view.dart';
@@ -37,7 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: Icon(Icons.search, color: AppColors.background),
             onPressed: () {
-              // Implement search functionality here
+              Navigator.pushNamed(
+                context,
+                AppRoutes
+                    .searchRoute, // Assuming you have set up a route for search
+              );
             },
           ),
           IconButton(

@@ -1,23 +1,23 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'top_headlines_response.g.dart';
+part 'news_api_response.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class TopHeadlinesResponse {
+class NewsApiResponse {
   final String status;
   final int totalResults;
   final List<ArticleModel> articles;
 
-  TopHeadlinesResponse({
+  NewsApiResponse({
     required this.status,
     required this.totalResults,
     required this.articles,
   });
 
-  factory TopHeadlinesResponse.fromJson(Map<String, dynamic> json) =>
-      _$TopHeadlinesResponseFromJson(json);
+  factory NewsApiResponse.fromJson(Map<String, dynamic> json) =>
+      _$NewsApiResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$TopHeadlinesResponseToJson(this);
+  Map<String, dynamic> toJson() => _$NewsApiResponseToJson(this);
 }
 
 @JsonSerializable()

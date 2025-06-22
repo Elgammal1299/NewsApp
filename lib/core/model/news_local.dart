@@ -1,4 +1,4 @@
-import 'package:news_app/feature/home/data/model/top_headlines_response.dart';
+import 'package:news_app/core/model/news_api_response.dart';
 
 class NewsLocal {
   final int? id;
