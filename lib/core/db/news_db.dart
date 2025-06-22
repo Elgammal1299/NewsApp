@@ -57,7 +57,7 @@ class NewsDatabase {
     List<NewsLocal> newsList,
   ) async {
     final db = await database;
-    // await db.delete(tableName);
+    await db.delete(tableName);
 
     final batch = db.batch();
     for (var news in newsList) {
