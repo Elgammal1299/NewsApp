@@ -65,6 +65,7 @@ class CustomHomeScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 12),
         BlocBuilder<TopHeadlinesCubit, TopHeadlinesState>(
           buildWhen:
               (previous, current) =>

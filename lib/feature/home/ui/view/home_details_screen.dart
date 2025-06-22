@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/core/utils/app_colors.dart';
 import 'package:news_app/core/model/news_api_response.dart';
+import 'package:news_app/core/utils/router/app_routes.dart';
 
 class HomeDetailsScreen extends StatelessWidget {
   final ArticleModel articles;
@@ -100,7 +101,7 @@ class HomeDetailsScreen extends StatelessWidget {
                       SizedBox(height: 8),
                       Text(
                         'Trending Now . $formattedDate',
-                        style: Theme.of(context).textTheme.labelSmall,
+                        style: TextStyle(color: AppColors.white, fontSize: 14),
                       ),
                     ],
                   ),
@@ -134,7 +135,10 @@ class HomeDetailsScreen extends StatelessWidget {
                               SizedBox(width: 8),
                               Text(
                                 articles.source.name ?? '',
-                                style: Theme.of(context).textTheme.labelMedium,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ],
                           ),
@@ -148,6 +152,20 @@ class HomeDetailsScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.webViewRoute,
+                        arguments: articles.url,
+                      );
+                    },
+                    child: Text('Read More'),
                   ),
                 ),
               ],

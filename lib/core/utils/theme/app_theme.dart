@@ -17,8 +17,8 @@ class AppTheme {
       ),
     ),
     textTheme: TextTheme(
-      labelLarge: TextStyle(color: AppColors.textPrimary, fontSize: 20),
-      labelMedium: TextStyle(color: AppColors.text2, fontSize: 18),
+      labelLarge: TextStyle(color: AppColors.background, fontSize: 20),
+      labelMedium: TextStyle(color: AppColors.background, fontSize: 18),
     ),
     iconTheme: IconThemeData(color: AppColors.primary),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -63,8 +63,8 @@ class AppTheme {
     ),
     textTheme: TextTheme(
       labelLarge: TextStyle(color: AppColors.darkTextPrimary, fontSize: 20),
-      labelMedium: TextStyle(color: AppColors.darkText2, fontSize: 18),
-      labelSmall: TextStyle(color: AppColors.darkText, fontSize: 16),
+      labelMedium: TextStyle(color: AppColors.background, fontSize: 18),
+      labelSmall: TextStyle(color: AppColors.background, fontSize: 16),
     ),
     iconTheme: IconThemeData(color: Colors.white),
     elevatedButtonTheme: ElevatedButtonThemeData(

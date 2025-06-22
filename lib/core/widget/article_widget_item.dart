@@ -53,8 +53,11 @@ class ArticleWidgetItem extends StatelessWidget {
                   article.title,
                   style:
                       isSmaller
-                          ? Theme.of(context).textTheme.labelMedium
-                          : Theme.of(context).textTheme.labelLarge,
+                          ? TextStyle(fontSize: 16, fontWeight: FontWeight.bold)
+                          : TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -63,8 +66,11 @@ class ArticleWidgetItem extends StatelessWidget {
                   article.author ?? '',
                   style:
                       isSmaller
-                          ? Theme.of(context).textTheme.labelSmall
-                          : Theme.of(context).textTheme.labelMedium,
+                          ? TextStyle(fontSize: 14, fontWeight: FontWeight.bold)
+                          : TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                 ),
               ],
             ),

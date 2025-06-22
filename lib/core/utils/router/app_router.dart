@@ -5,6 +5,7 @@ import 'package:news_app/core/utils/router/app_routes.dart';
 import 'package:news_app/core/model/news_api_response.dart';
 import 'package:news_app/feature/home/ui/view/home_details_screen.dart';
 import 'package:news_app/feature/home/ui/view/home_screen.dart';
+import 'package:news_app/feature/home/ui/view/web_view_screen.dart';
 import 'package:news_app/feature/home/ui/view_model/top_headlines_cubit/top_headlines_cubit.dart';
 import 'package:news_app/feature/search/ui/view/search_screen.dart';
 import 'package:news_app/feature/search/ui/view_model/search_cubit/search_cubit.dart';
@@ -19,8 +20,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => HomeDetailsScreen(articles: articles),
         );
+      case AppRoutes.webViewRoute:
+        final url = settings.arguments as String;
+        return MaterialPageRoute(builder: (_) => WebViewScreen(url: url));
       case AppRoutes.searchRoute:
-        // final articles = settings.arguments as ArticleModel;
         return MaterialPageRoute(
           builder:
               (_) => BlocProvider(
