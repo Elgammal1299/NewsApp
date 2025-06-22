@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/DI/setup_get_it.dart';
 import 'package:news_app/core/utils/router/app_routes.dart';
+import 'package:news_app/feature/home/data/model/top_headlines_response.dart';
+import 'package:news_app/feature/home/ui/view/home_details_screen.dart';
 import 'package:news_app/feature/home/ui/view/home_screen.dart';
 import 'package:news_app/feature/home/ui/view_model/top_headlines_cubit/top_headlines_cubit.dart';
 
@@ -10,12 +12,20 @@ class AppRouter {
     switch (settings.name) {
       // case AppRoutes.splasahRouter:
       //   return MaterialPageRoute(builder: (_) => SplashScreen());
+      case AppRoutes.homeDetails:
+        final articles = settings.arguments as ArticleModel;
+        return MaterialPageRoute(
+          builder: (_) => HomeDetailsScreen(articles: articles),
+        );
       case AppRoutes.homeRoute:
         return MaterialPageRoute(
           builder:
               (_) => BlocProvider(
                 create:
-                    (context) => getIt<TopHeadlinesCubit>()..getTopHeadlines()..getRecommendedNews(),
+                    (context) =>
+                        getIt<TopHeadlinesCubit>()
+                          ..getTopHeadlines()
+                          ..getRecommendedNews(),
                 child: HomeScreen(),
               ),
         );
