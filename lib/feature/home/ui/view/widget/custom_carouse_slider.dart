@@ -86,7 +86,10 @@ class _CarouselWithIndicatorState extends State<CustomCarouseSlider> {
                               ),
                               Text(
                                 publishedData,
-                                style: Theme.of(context).textTheme.labelSmall,
+                                style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: 12,
+                                ),
                               ),
                             ],
                           ),

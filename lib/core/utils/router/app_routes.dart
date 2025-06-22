@@ -3,4 +3,5 @@ class AppRoutes {
   static const homeRoute = '/';
   static const homeDetails = '/homeDetails';
   static const searchRoute = '/search';
+  static const webViewRoute = '/webView';
 }
